@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_time"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.c.denglizimeijunqi.Function.TimeActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp">
+
+    <Button
+        android:id="@+id/time_button"
+        android:layout_width="100dp"
+        android:layout_height="?attr/actionBarSize"
+        android:drawableLeft="@drawable/back"
+        android:textSize="24sp"
+        android:background="#4052B5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="灭菌时间显示"
+        android:textSize="24dp"
+        android:textColor="#FFFFFF"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"/>
+   </android.support.v7.widget.Toolbar>
+
+
+    <Button
+        android:id="@+id/biaozhun_button"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="标准灭菌"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id="@+id/yure_button"
+        android:layout_below="@+id/biaozhun_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="预热灭菌"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id="@+id/gaoji_button"
+        android:layout_below="@+id/yure_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="高级灭菌"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id="@+id/biaomian_button"
+        android:layout_below="@+id/gaoji_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="表面灭菌"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id="@+id/zijian_button"
+        android:layout_below="@+id/biaomian_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="自检"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+
+
+
+
+</RelativeLayout>

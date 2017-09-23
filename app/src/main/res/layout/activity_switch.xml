@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_switch"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.c.denglizimeijunqi.Function.SwitchActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp">
+
+    <Button
+        android:id="@+id/switch_button"
+        android:layout_width="100dp"
+        android:layout_height="?attr/actionBarSize"
+        android:drawableLeft="@drawable/back"
+        android:textSize="24sp"
+        android:background="#4052B5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开关"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"/>
+   </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/text_one"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="等离子灭菌器"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/on_button"
+        android:layout_below="@+id/text_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/text_one"
+        android:text="开门"
+        android:textSize="24dp"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止"
+        android:textSize="24dp"
+        android:id="@+id/stop_button"
+        android:layout_below="@+id/text_one"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关门"
+        android:textSize="24dp"
+        android:id="@+id/off_button"
+        android:layout_below="@+id/text_one"
+        android:layout_alignRight="@+id/text_one"
+        android:layout_alignEnd="@+id/text_one"/>
+
+
+</RelativeLayout>
