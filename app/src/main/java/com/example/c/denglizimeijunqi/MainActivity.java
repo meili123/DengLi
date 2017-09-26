@@ -24,9 +24,10 @@ import static android.R.id.list;
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private Functionall[] fruits={
-            new Functionall("开关",R.drawable.kaiguan),
-            new Functionall("灭菌时间显示",R.drawable.shijian),
-            new Functionall("报警信息",R.drawable.baojing)};
+            new Functionall("设备运行状态",R.drawable.yunxing),
+            new Functionall("帮助",R.drawable.bangzhu),
+            new Functionall("发现",R.drawable.faxian),
+            new Functionall("包装",R.drawable.baozhuang)};
     private List<Functionall> functionalist=new ArrayList<>();
     private FunctionAdapter adapter;
     @Override

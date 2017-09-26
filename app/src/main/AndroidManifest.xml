@@ -31,6 +31,16 @@
         </activity>
         <activity android:name=".TimeDisplay.BiaoZhunActivity">
         </activity>
+        <activity android:name=".Function.RunActivity">
+        </activity>
+        <activity android:name=".RunActivity">
+        </activity>
+        <activity android:name=".BangZhuActivity">
+        </activity>
+        <activity android:name=".FaXianActivity">
+        </activity>
+        <activity android:name=".BaoZhuangActivity">
+        </activity>
     </application>
 
 </manifest>

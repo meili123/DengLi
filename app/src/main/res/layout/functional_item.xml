@@ -13,10 +13,11 @@
     android:weightSum="1">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_margin="8dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/function_image"
-        android:src="@drawable/kaiguan"
+        android:src="@drawable/yunxing"
         android:scaleType="centerCrop"
         android:layout_gravity="center_horizontal"/>
     <TextView

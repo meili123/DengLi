@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_zi_jian"
+    android:id="@+id/activity_bao_zhuang"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.c.denglizimeijunqi.TimeDisplay.ZiJianActivity">
+    tools:context="com.example.c.denglizimeijunqi.BaoZhuangActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -17,20 +17,22 @@
         app:contentInsetStart="0dp"
         app:contentInsetLeft="0dp">
 
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="包装"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"/>
         <Button
-            android:id="@+id/switch_button"
+            android:id="@+id/baozhuang_button"
             android:layout_width="100dp"
             android:layout_height="?attr/actionBarSize"
             android:drawableLeft="@drawable/back"
             android:textSize="24sp"
             android:background="#4052B5"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="自检"
-            android:textSize="24sp"
-            android:textColor="#FFFFFF"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"/>
     </android.support.v7.widget.Toolbar>
+
 </RelativeLayout>

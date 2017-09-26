@@ -10,9 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.c.denglizimeijunqi.Function.AlarmActivity;
-import com.example.c.denglizimeijunqi.Function.SwitchActivity;
-import com.example.c.denglizimeijunqi.Function.TimeActivity;
 
 import java.util.List;
 
@@ -83,17 +80,20 @@ public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.ViewHo
                  *拿到fruit实例
                  */
                 Functionall fruit=mFunctialList.get(position);
-                if(fruit.getName().equals("开关")){
-                    Intent intent=new Intent(mcontext,SwitchActivity.class);
+                if(fruit.getName().equals("设备运行状态")){
+                    Intent intent=new Intent(mcontext,RunActivity.class);
                     mcontext.startActivity(intent);
-                }else if (fruit.getName().equals("灭菌时间显示")){
-                    Intent intent=new Intent(mcontext,TimeActivity.class);
-                    mcontext.startActivity(intent);
-
-                }else if (fruit.getName().equals("报警信息")){
-                    Intent intent=new Intent(mcontext,AlarmActivity.class);
+                }else if (fruit.getName().equals("帮助")){
+                    Intent intent=new Intent(mcontext,BangZhuActivity.class);
                     mcontext.startActivity(intent);
 
+                }else if (fruit.getName().equals("发现")){
+                    Intent intent=new Intent(mcontext,FaXianActivity.class);
+                    mcontext.startActivity(intent);
+
+                }else if(fruit.getName().equals("包装")){
+                    Intent intent=new Intent(mcontext,BaoZhuangActivity.class);
+                    mcontext.startActivity(intent);
                 }
 
             }
