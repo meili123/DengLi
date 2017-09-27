@@ -6,7 +6,7 @@
     android:id="@+id/activity_bang_zhu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.c.denglizimeijunqi.BangZhuActivity">
+    tools:context="com.example.c.denglizimeijunqi.Function.BangZhuActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -34,5 +34,73 @@
             android:textSize="24sp"
             android:background="#4052B5"/>
     </android.support.v7.widget.Toolbar>
+
+    <com.sevenheaven.segmentcontrol.SegmentControl
+        xmlns:segmentcontrol="http://schemas.android.com/apk/res-auto"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/segment_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        segmentcontrol:cornerRadius="5dp"
+        segmentcontrol:horizonGap="40dp"
+        segmentcontrol:texts="准备方法|说明信息|注意事项"
+        segmentcontrol:verticalGap="8dp"/>
+    <ListView
+        android:layout_below="@+id/segment_control"
+        android:id="@+id/zhunbei_Listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0ff">
+    </ListView>
+        <ListView
+            android:layout_below="@+id/segment_control"
+            android:id="@+id/shuoming_Listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00ff00">
+        </ListView>
+        <ListView
+            android:layout_below="@+id/segment_control"
+            android:id="@+id/zhuyi_Listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#0000ff">
+        </ListView>
+
+
+
+    <!--<TextView-->
+        <!--android:layout_below="@+id/segment_control"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/zhunbei_textview"-->
+        <!--android:background="#00FF00"-->
+        <!--android:text="准备方法"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_centerHorizontal="true"/>-->
+
+    <!--<TextView-->
+        <!--android:layout_below="@+id/segment_control"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/shuoming_textview"-->
+        <!--android:background="#0000FF"-->
+        <!--android:text="说明信息"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_centerHorizontal="true"/>-->
+    <!--<TextView-->
+        <!--android:layout_below="@+id/segment_control"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/zhuyi_textview"-->
+        <!--android:background="#0FF"-->
+        <!--android:text="注意事项"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_centerHorizontal="true"/>-->
+
+
 
 </RelativeLayout>

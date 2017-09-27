@@ -33,13 +33,17 @@
         </activity>
         <activity android:name=".Function.RunActivity">
         </activity>
-        <activity android:name=".RunActivity">
+        <activity android:name=".Function.RunActivity">
         </activity>
-        <activity android:name=".BangZhuActivity">
+        <activity android:name=".Function.BangZhuActivity">
         </activity>
-        <activity android:name=".FaXianActivity">
+        <activity android:name=".Function.FaXianActivity">
         </activity>
-        <activity android:name=".BaoZhuangActivity">
+        <activity android:name=".Function.BaoZhuangActivity">
+        </activity>
+        <activity android:name=".nav_view.SheZhiActivity">
+        </activity>
+        <activity android:name=".nav_view.TianJiaSheBeiActivity">
         </activity>
     </application>
 

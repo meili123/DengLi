@@ -1,5 +1,6 @@
 package com.example.c.denglizimeijunqi;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -13,7 +14,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import com.example.c.denglizimeijunqi.nav_view.SheZhiActivity;
+import com.example.c.denglizimeijunqi.nav_view.TianJiaSheBeiActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +46,17 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                mDrawerLayout.closeDrawers();
+                switch (item.getItemId()){
+                    case R.id.shezhi:
+                        Intent intent=new Intent(MainActivity.this, SheZhiActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.tianjiashebei:
+                        Intent intent1=new Intent(MainActivity.this, TianJiaSheBeiActivity.class);
+                        startActivity(intent1);
+                        break;
+                    default:
+                }
                 return true;
             }
         });

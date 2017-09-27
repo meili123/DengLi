@@ -10,6 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.c.denglizimeijunqi.Function.BangZhuActivity;
+import com.example.c.denglizimeijunqi.Function.BaoZhuangActivity;
+import com.example.c.denglizimeijunqi.Function.FaXianActivity;
+import com.example.c.denglizimeijunqi.Function.RunActivity;
 
 import java.util.List;
 

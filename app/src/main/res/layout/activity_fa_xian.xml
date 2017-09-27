@@ -6,7 +6,7 @@
     android:id="@+id/activity_fa_xian"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.c.denglizimeijunqi.FaXianActivity">
+    tools:context="com.example.c.denglizimeijunqi.Function.FaXianActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

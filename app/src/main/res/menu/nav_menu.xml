@@ -2,12 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <group android:checkableBehavior="single"/>
     <item
-        android:id="@+id/dianhua"
+        android:id="@+id/shezhi"
         android:title="设置"/>
     <item
-        android:id="@+id/pengyou"
-        android:title="产品信息"/>
-    <item
-        android:id="@+id/ditu"
-        android:title="使用说明书"/>
+        android:id="@+id/tianjiashebei"
+        android:title="添加设备"/>
 </menu>
