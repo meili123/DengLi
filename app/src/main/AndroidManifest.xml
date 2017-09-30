@@ -49,6 +49,8 @@
         </activity>
         <activity android:name=".SheZhi.GuanYuActivity">
         </activity>
+        <activity android:name=".XiugaiZhanghaoYouXiang.XiuGaiYouXiangActivity">
+        </activity>
     </application>
 
 </manifest>
