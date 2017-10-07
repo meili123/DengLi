@@ -34,4 +34,54 @@
             android:textSize="24sp"
             android:background="#4052B5"/>
     </android.support.v7.widget.Toolbar>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ImageView"
+        android:layout_below="@+id/toolbar"
+        android:background="@drawable/bangzhu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        android:layout_below="@+id/ImageView"
+        android:textSize="24sp"
+        android:text="v0.0.0-1.0.0"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="等离子灭菌器"
+        android:id="@+id/textview1"
+        android:layout_below="@id/textview"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="http://www.tuoren.com"
+        android:layout_below="@id/textview1"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:background="#FAFAFA"
+        android:textColor="#0000ff"
+        android:textSize="20sp"
+        android:id="@+id/buttonURL"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="19sp"
+        android:text="地址:河南省长垣县纬七路中段驼人集团"
+        android:layout_below="@+id/buttonURL"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+
+
+
 </RelativeLayout>

@@ -7,7 +7,7 @@
     <!--<Button-->
         <!--android:layout_width="70dp"-->
         <!--android:layout_height="70dp"-->
-        <!--android:background="@drawable/xiaogou"-->
+        <!--android:background="@drawable/touxiang"-->
         <!--android:layout_centerInParent="true"-->
         <!--android:id="@+id/xiaogou"/>-->
         <de.hdodenhof.circleimageview.CircleImageView

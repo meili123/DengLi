@@ -14,9 +14,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.c.denglizimeijunqi.Function.BaoZhuangActivity;
+import com.example.c.denglizimeijunqi.SheZhi.ZhangHaoGuanLiActivity;
 import com.example.c.denglizimeijunqi.nav_view.SheZhiActivity;
 import com.example.c.denglizimeijunqi.nav_view.TianJiaSheBeiActivity;
 
@@ -42,7 +47,20 @@ public class MainActivity extends AppCompatActivity {
         /**
          * 左侧的navview
          */
+
         NavigationView navigationView=(NavigationView)findViewById(R.id.nav_view);
+        View headview=navigationView.inflateHeaderView(R.layout.nav_header);
+
+        ImageView head_iv= (ImageView) headview.findViewById(R.id.xiaogou);
+
+        head_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,ZhangHaoGuanLiActivity.class);
+                startActivity(intent);
+            }
+        });
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -87,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         adapter=new FunctionAdapter(functionalist);
         recyclerView.setAdapter(adapter);
+
+
 
     }
 

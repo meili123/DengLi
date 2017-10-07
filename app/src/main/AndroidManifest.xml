@@ -51,6 +51,8 @@
         </activity>
         <activity android:name=".XiugaiZhanghaoYouXiang.XiuGaiYouXiangActivity">
         </activity>
+        <activity android:name=".XiugaiZhanghaoYouXiang.XiuGaiMiMaActivity">
+        </activity>
     </application>
 
 </manifest>

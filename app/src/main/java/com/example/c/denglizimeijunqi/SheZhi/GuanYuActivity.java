@@ -1,6 +1,7 @@
 package com.example.c.denglizimeijunqi.SheZhi;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,16 @@ public class GuanYuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(GuanYuActivity.this,SheZhiActivity.class);
                 startActivity(intent);
+            }
+        });
+        Button button1=(Button)findViewById(R.id.buttonURL);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://www.tuoren.com/"));
+                startActivity(intent);
+
             }
         });
     }

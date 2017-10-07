@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.c.denglizimeijunqi.MainActivity;
 import com.example.c.denglizimeijunqi.R;
+import com.example.c.denglizimeijunqi.XiugaiZhanghaoYouXiang.XiuGaiMiMaActivity;
 import com.example.c.denglizimeijunqi.XiugaiZhanghaoYouXiang.XiuGaiYouXiangActivity;
 import com.example.c.denglizimeijunqi.nav_view.SheZhiActivity;
 import com.example.c.denglizimeijunqi.nav_view.SheZhiAdapter;
@@ -65,7 +66,8 @@ public class ZhangHaoGuanLiActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 } else if (i == 3) {
-                    Toast.makeText(ZhangHaoGuanLiActivity.this, zhangHao.getItem3_str(), Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(ZhangHaoGuanLiActivity.this, XiuGaiMiMaActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(ZhangHaoGuanLiActivity.this, zhangHao.getItem4_str(), Toast.LENGTH_SHORT).show();
                 }
@@ -91,7 +93,6 @@ public class ZhangHaoGuanLiActivity extends AppCompatActivity {
         users.add(new ZhangHao(null, "昵称", null,null));
         users.add(new ZhangHao(null, null, "修改账号邮箱",null));
         users.add(new ZhangHao(null, null, "修改密码",null));
-        users.add(new ZhangHao(null,null,null,"退出当前登录"));
 
     }
 
