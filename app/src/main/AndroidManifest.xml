@@ -9,29 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".denglu.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".Function.TimeActivity">
-        </activity>
-        <activity android:name=".Function.AlarmActivity">
-        </activity>
-        <activity android:name=".Function.SwitchActivity">
-        </activity>
-        <activity android:name=".TimeDisplay.ZiJianActivity">
-        </activity>
-        <activity android:name=".TimeDisplay.BiaoMianActivity">
-        </activity>
-        <activity android:name=".TimeDisplay.GaoJiActivity">
-        </activity>
-        <activity android:name=".TimeDisplay.YuReActivity">
-        </activity>
-        <activity android:name=".TimeDisplay.BiaoZhunActivity">
-        </activity>
-        <activity android:name=".Function.RunActivity">
         </activity>
         <activity android:name=".Function.RunActivity">
         </activity>
@@ -52,6 +35,8 @@
         <activity android:name=".XiugaiZhanghaoYouXiang.XiuGaiYouXiangActivity">
         </activity>
         <activity android:name=".XiugaiZhanghaoYouXiang.XiuGaiMiMaActivity">
+        </activity>
+        <activity android:name=".denglu.DengLuActivity">
         </activity>
     </application>
 

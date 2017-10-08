@@ -68,5 +68,6 @@
         android:id="@+id/zhanghaoguanli_button"
         android:text="退出当前登录"
         android:textSize="24sp"
-        android:background="#FFFFFF"/>
+        android:background="#FFFFFF"
+        />
 </RelativeLayout>

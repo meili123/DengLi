@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,12 +20,16 @@ import com.example.c.denglizimeijunqi.MainActivity;
 import com.example.c.denglizimeijunqi.R;
 import com.example.c.denglizimeijunqi.XiugaiZhanghaoYouXiang.XiuGaiMiMaActivity;
 import com.example.c.denglizimeijunqi.XiugaiZhanghaoYouXiang.XiuGaiYouXiangActivity;
+import com.example.c.denglizimeijunqi.denglu.BaseActivity;
 import com.example.c.denglizimeijunqi.nav_view.SheZhiActivity;
 import com.example.c.denglizimeijunqi.nav_view.SheZhiAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-public class ZhangHaoGuanLiActivity extends AppCompatActivity {
+
+import static com.example.c.denglizimeijunqi.R.id.view;
+
+public class ZhangHaoGuanLiActivity extends BaseActivity {
     private ListView listView;
     private ZhanhaoAdapter adapter;
     private List<ZhangHao> users;
@@ -37,6 +43,7 @@ public class ZhangHaoGuanLiActivity extends AppCompatActivity {
         initdata();
         adapter = new ZhanhaoAdapter(this, users);
         listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -44,22 +51,20 @@ public class ZhangHaoGuanLiActivity extends AppCompatActivity {
                 if(i==0){
                     Toast.makeText(ZhangHaoGuanLiActivity.this,zhangHao.getItem1_str(),Toast.LENGTH_SHORT).show();
                 }else if (i == 1) {
-                    LayoutInflater layoutInflater=LayoutInflater.from(ZhangHaoGuanLiActivity.this);
-                    View mTitlrView= layoutInflater.inflate(R.layout.zhangtitle,null);
+                    final  View mTitlrView= getLayoutInflater().inflate(R.layout.zhangtitle,null);
+                    final EditText uname = (EditText)mTitlrView.findViewById(R.id.tixingedit);
                     AlertDialog.Builder dialog = new AlertDialog.Builder(ZhangHaoGuanLiActivity.this);
-//                    dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                        }
-//                    });
-//                    dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                        }
-//                    });
-                    dialog.setCustomTitle(mTitlrView);
+                    dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            String input = uname.getText().toString();
+                            Log.d("ZhangHaoGuanLiActivity1",input);
+                        }
+
+                    });
+                    dialog.setNegativeButton("取消", null);
+//                    dialog.setCustomTitle(mTitlrView);
+                    dialog.setView(mTitlrView);
                     dialog.show();
                 } else if (i == 2) {
                     Intent intent=new Intent(ZhangHaoGuanLiActivity.this, XiuGaiYouXiangActivity.class);
@@ -84,6 +89,14 @@ public class ZhangHaoGuanLiActivity extends AppCompatActivity {
             }
         });
 
+        Button button1=(Button)findViewById(R.id.zhanghaoguanli_button);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent("com.example.c.denglizimeijunqi.denglu.FORCE_OFFLINE");
+                sendBroadcast(intent);
+            }
+        });
 
 
     }

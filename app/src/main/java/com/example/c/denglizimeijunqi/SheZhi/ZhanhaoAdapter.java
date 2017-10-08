@@ -81,11 +81,11 @@ public class ZhanhaoAdapter extends BaseAdapter {
         //比如第一个布局只有item1_str这个字段，那么就判断这个字段是不是为空，
         //如果不为空就表明这是第一个布局的数据
         //根据字段是不是为空，判断当前应该加载的布局
-        Log.i("LHD", u.toString());
-        Log.i("LHD", "第一个返回值" + u.getItem1_str());
-        Log.i("LHD", "第二个返回值" + u.getItem2_str());
-        Log.i("LHD", "第三个返回值" + u.getItem3_str());
-        Log.i("LHD", "第四个个返回值" + u.getItem3_str());
+//        Log.i("LHD", u.toString());
+//        Log.i("LHD", "第一个返回值" + u.getItem1_str());
+//        Log.i("LHD", "第二个返回值" + u.getItem2_str());
+//        Log.i("LHD", "第三个返回值" + u.getItem3_str());
+//        Log.i("LHD", "第四个个返回值" + u.getItem3_str());
         if (u.getItem1_str() != null) {
             return TYPE1;
         } else if (u.getItem2_str() != null) {

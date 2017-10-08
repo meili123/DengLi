@@ -16,11 +16,12 @@ import com.example.c.denglizimeijunqi.MainActivity;
 import com.example.c.denglizimeijunqi.R;
 import com.example.c.denglizimeijunqi.SheZhi.GuanYuActivity;
 import com.example.c.denglizimeijunqi.SheZhi.ZhangHaoGuanLiActivity;
+import com.example.c.denglizimeijunqi.denglu.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SheZhiActivity extends AppCompatActivity {
+public class SheZhiActivity extends BaseActivity {
     private List<Shezhitu> shezhituList=new ArrayList<>();
 
    private ListView shezhilistView;
@@ -52,6 +53,14 @@ public class SheZhiActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(SheZhiActivity.this,MainActivity.class);
                 startActivity(intent);
+            }
+        });
+        Button button1=(Button)findViewById(R.id.tuichu_Button);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent("com.example.c.denglizimeijunqi.denglu.FORCE_OFFLINE");
+                sendBroadcast(intent);
             }
         });
 
