@@ -89,13 +89,13 @@
         android:background="#f71818"
         android:layout_below="@+id/queding_btn"
         android:layout_marginTop="10dp" />
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="删除"
-        android:id="@+id/delete_btn"
-        android:textSize="20dp"
-        android:background="#f71"
-        android:layout_below="@+id/quxioa_button"/>
 
 </RelativeLayout>
+    <!--<Button-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="删除"-->
+    <!--android:id="@+id/delete_btn"-->
+    <!--android:textSize="20dp"-->
+    <!--android:background="#f71"-->
+    <!--android:layout_below="@+id/quxioa_button"/>-->

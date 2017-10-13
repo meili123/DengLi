@@ -52,55 +52,19 @@
         android:layout_below="@+id/segment_control"
         android:id="@+id/zhunbei_Listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#0ff">
+        android:layout_height="match_parent">
     </ListView>
         <ListView
             android:layout_below="@+id/segment_control"
             android:id="@+id/shuoming_Listview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#00ff00">
+            android:layout_height="match_parent">
         </ListView>
         <ListView
             android:layout_below="@+id/segment_control"
             android:id="@+id/zhuyi_Listview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#0000ff">
+            android:layout_height="match_parent">
         </ListView>
-
-
-
-    <!--<TextView-->
-        <!--android:layout_below="@+id/segment_control"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/zhunbei_textview"-->
-        <!--android:background="#00FF00"-->
-        <!--android:text="准备方法"-->
-        <!--android:gravity="center"-->
-        <!--android:layout_centerHorizontal="true"/>-->
-
-    <!--<TextView-->
-        <!--android:layout_below="@+id/segment_control"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/shuoming_textview"-->
-        <!--android:background="#0000FF"-->
-        <!--android:text="说明信息"-->
-        <!--android:gravity="center"-->
-        <!--android:layout_centerHorizontal="true"/>-->
-    <!--<TextView-->
-        <!--android:layout_below="@+id/segment_control"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/zhuyi_textview"-->
-        <!--android:background="#0FF"-->
-        <!--android:text="注意事项"-->
-        <!--android:gravity="center"-->
-        <!--android:layout_centerHorizontal="true"/>-->
-
-
 
 </RelativeLayout>

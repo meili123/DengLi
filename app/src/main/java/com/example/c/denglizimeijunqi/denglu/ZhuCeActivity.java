@@ -72,14 +72,14 @@ public class ZhuCeActivity extends AppCompatActivity {
 
             }
         });
-        Button delete=(Button)findViewById(R.id.delete_btn);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DataSupport.deleteAll(UserData.class, "userPwd= ?", "");
-
-            }
-        });
+//        Button delete=(Button)findViewById(R.id.delete_btn);
+//        delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                DataSupport.deleteAll(UserData.class, "userPwd= ?", "");
+//
+//            }
+//        });
 
     }
 }

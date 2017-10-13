@@ -49,6 +49,7 @@
             android:layout_gravity="center_horizontal"
             android:id="@+id/mima"
             android:ems="10"
+            android:inputType="textPassword"
             android:drawableLeft="@android:drawable/ic_lock_idle_lock"
             android:hint="请输入您的密码"/>
 

@@ -32,17 +32,31 @@ public class LoginActivity extends BaseActivity {
     private Button login;
     private Button zhuce;
     private List<UserData> list=new ArrayList<>();
+    private String password;
+    private String user;
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
     private CheckBox rememberpass;
-    String password;
-    String user;
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        pref=PreferenceManager.getDefaultSharedPreferences(this);
+
         accounteditText=(EditText)findViewById(R.id.yonghu);
         passwordeditText=(EditText)findViewById(R.id.mima);
         //检验箱
         rememberpass=(CheckBox)findViewById(R.id.remember);
+        boolean isRemember=pref.getBoolean("remember_password",false);
+        //如果上次选了记住密码，那进入登录页面也自动勾选记住密码，并填上用户名和密码
+        if (isRemember){
+            //将账号和密码设置到文本框中
+            String account=pref.getString("account","");
+            String pass=pref.getString("pasword","");
+            accounteditText.setText(account);
+            passwordeditText.setText(pass);
+            rememberpass.setChecked(true);
+        }
         login=(Button)findViewById(R.id.Button1);
         textView=(TextView)findViewById(R.id.change_text);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -59,16 +73,6 @@ public class LoginActivity extends BaseActivity {
             public void onClick(View view) {
                 user=accounteditText.getText().toString();
                 password=passwordeditText.getText().toString();
-//                if (rememberpass.isChecked()){
-//                    accounteditText.setText(user);
-//                    passwordeditText.setText(password);
-//
-//                }
-//                else {
-//                    accounteditText.setText("");
-//                    passwordeditText.setText("");
-//                }
-
 //                获取用户名字符串
                 list= DataSupport.findAll(UserData.class);
                 for (UserData person:list)
@@ -79,17 +83,28 @@ public class LoginActivity extends BaseActivity {
                     if(person.getUserName().equals(user)&&person.getUserPwd().equals(password)
                             &&(user.length()>0)&&(password.length()>0))
                     {
-
+                        editor=pref.edit();
+                        if (rememberpass.isChecked()){//检查复选框是否被选中
+                            editor.putBoolean("remember_password",true);
+                            editor.putString("account",user);
+                            editor.putString("pasword",password);
+                        }else {
+                            editor.clear();
+                        }
+                        editor.apply();
 
                         Intent intent1=new Intent(LoginActivity.this,MainActivity.class);
+                        intent1.putExtra("yonghuming",user);
+                        intent1.putExtra("mima",password);
                         startActivity(intent1);
                         Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
                         break;
-                    } else if ((password.length()<=0)||(user.length()<=0)){
+                    } else  if ((password.length()<=0)||(user.length()<=0)) {
                     Toast.makeText(LoginActivity.this,"登录失败",Toast.LENGTH_SHORT).show();break;}
                 }
 
 
+//                (!(person.getUserName().equals(user)))||(!person.getUserPwd().equals(password))
             }
         });
 

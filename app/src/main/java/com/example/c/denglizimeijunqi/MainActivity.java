@@ -1,6 +1,8 @@
 package com.example.c.denglizimeijunqi;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,19 +13,26 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.c.denglizimeijunqi.nav_view.SheZhiActivity;
 import com.example.c.denglizimeijunqi.nav_view.TianJiaSheBeiActivity;
+import com.example.c.denglizimeijunqi.shujuku.UserData;
+
+import org.litepal.crud.DataSupport;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.prefs.PreferenceChangeEvent;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
             new Functionall("包装",R.drawable.baozhuang)};
     private List<Functionall> functionalist=new ArrayList<>();
     private FunctionAdapter adapter;
+    private List<UserData> list=new ArrayList<>();
+    private String text;
+    private SharedPreferences pref;
+    private  SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +58,23 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView=(NavigationView)findViewById(R.id.nav_view);
         View headview=navigationView.inflateHeaderView(R.layout.nav_header);
-
         ImageView head_iv= (ImageView) headview.findViewById(R.id.xiaogou);
+        TextView textView=(TextView)headview.findViewById(R.id.mailtext);
+        Intent intent=getIntent();
+        String data=intent.getStringExtra("yonghuming");
+        String mima=intent.getStringExtra("mima");
+
+        pref= PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isRemember=pref.getBoolean("remember_name",false);
+        if (isRemember){
+            String account=pref.getString("account","");
+            textView.setText(account);
+        }else {
+            editor=pref.edit();
+            editor.putBoolean("remember_name",true);
+            editor.putString("account",data);
+            editor.apply();
+        }
 
         head_iv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +131,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+//      NavigationView navigatin = (NavigationView)findViewById(R.id.nav_view);
+//      View  headerLayout = navigatin.inflateHeaderView(R.layout.nav_header);
+//        TextView textView=(TextView)headerLayout.findViewById(R.id.mailtext);
+
+//        View mView= getLayoutInflater().inflate(R.layout.nav_header,null);
+//        TextView textView=(TextView)mView.findViewById(R.id.mailtext);
+//        textView.setText("4654984");
     }
 
     /**
