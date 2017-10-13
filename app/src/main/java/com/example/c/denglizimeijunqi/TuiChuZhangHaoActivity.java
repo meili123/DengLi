@@ -1,39 +1,37 @@
-package com.example.c.denglizimeijunqi.SheZhi;
+package com.example.c.denglizimeijunqi;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.c.denglizimeijunqi.MainActivity;
-import com.example.c.denglizimeijunqi.R;
+import com.example.c.denglizimeijunqi.SheZhi.GuanYuActivity;
+import com.example.c.denglizimeijunqi.denglu.BaseActivity;
 import com.example.c.denglizimeijunqi.nav_view.SheZhiActivity;
 
-public class GuanYuActivity extends AppCompatActivity {
+public class TuiChuZhangHaoActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guan_yu);
-        Button button=(Button)findViewById(R.id.shezhi_button);
+        setContentView(R.layout.activity_tui_chu_zhang_hao);
+
+        Button button=(Button)findViewById(R.id.guanli_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(GuanYuActivity.this,SheZhiActivity.class);
+                Intent intent=new Intent(TuiChuZhangHaoActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
-        TextView button1=(TextView)findViewById(R.id.buttonURL);
+
+        Button button1=(Button)findViewById(R.id.tui123_Button);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://www.tuoren.com/"));
-                startActivity(intent);
-
+                Intent intent=new Intent("com.example.c.denglizimeijunqi.denglu.FORCE_OFFLINE");
+                sendBroadcast(intent);
             }
         });
     }

@@ -1,7 +1,6 @@
 package com.example.c.denglizimeijunqi;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,23 +12,18 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.c.denglizimeijunqi.Function.BaoZhuangActivity;
-import com.example.c.denglizimeijunqi.SheZhi.ZhangHaoGuanLiActivity;
-import com.example.c.denglizimeijunqi.denglu.LoginActivity;
 import com.example.c.denglizimeijunqi.nav_view.SheZhiActivity;
 import com.example.c.denglizimeijunqi.nav_view.TianJiaSheBeiActivity;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.R.id.list;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         head_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,ZhangHaoGuanLiActivity.class);
+                Intent intent=new Intent(MainActivity.this,TuiChuZhangHaoActivity.class);
                 startActivity(intent);
             }
         });
@@ -114,12 +108,33 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 加载菜单布局
      */
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu){
+//       getMenuInflater().inflate(R.menu.toolbar,menu);
+//        return true;
+//    }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-       getMenuInflater().inflate(R.menu.toolbar,menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        setIconEnable(menu,true);
+        getMenuInflater().inflate(R.menu.toolbar, menu);
         return true;
     }
-    
+    private void setIconEnable(Menu menu, boolean enable)
+    {
+        try
+        {
+            Class<?> clazz = Class.forName("com.android.internal.view.menu.MenuBuilder");
+            Method m = clazz.getDeclaredMethod("setOptionalIconsVisible", boolean.class);
+            m.setAccessible(true);
+            //下面传入参数
+            m.invoke(menu, enable);
+
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
     /**
      * 实现菜单点击事件
      */

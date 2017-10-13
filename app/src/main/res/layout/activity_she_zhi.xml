@@ -58,9 +58,7 @@
         android:layout_height="wrap_content"
         android:text="退出当前账号"
         android:textColor="#000000"
-        android:layout_marginLeft="36dp"
-        android:layout_marginRight="36dp"
-        android:background="#FFFFFF"
+        android:background="#FF3F5A"
         android:textSize="24sp"
         android:id="@+id/tuichu_Button"/>
 </RelativeLayout>

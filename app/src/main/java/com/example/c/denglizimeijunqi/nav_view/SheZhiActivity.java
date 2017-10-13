@@ -1,21 +1,16 @@
 package com.example.c.denglizimeijunqi.nav_view;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.c.denglizimeijunqi.Function.BangZhuActivity;
-import com.example.c.denglizimeijunqi.Function.RunActivity;
 import com.example.c.denglizimeijunqi.MainActivity;
 import com.example.c.denglizimeijunqi.R;
 import com.example.c.denglizimeijunqi.SheZhi.GuanYuActivity;
-import com.example.c.denglizimeijunqi.SheZhi.ZhangHaoGuanLiActivity;
 import com.example.c.denglizimeijunqi.denglu.BaseActivity;
 
 import java.util.ArrayList;
@@ -37,13 +32,12 @@ public class SheZhiActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Shezhitu shezhitu=shezhituList.get(i);
-                if (shezhitu.getName().equals("账号管理")){
-                    Intent intent=new Intent(SheZhiActivity.this, ZhangHaoGuanLiActivity.class);
-                    startActivity(intent);
-                }else if (shezhitu.getName().equals("关于")){
+                 if (shezhitu.getName().equals("关于")){
                     Intent intent=new Intent(SheZhiActivity.this, GuanYuActivity.class);
                     startActivity(intent);
-                }
+                }else if(shezhitu.getName().equals("检测新版本")){
+                     Toast.makeText(SheZhiActivity.this,"已经是最新版本",Toast.LENGTH_LONG).show();
+                 }
             }
         });
 
@@ -66,9 +60,13 @@ public class SheZhiActivity extends BaseActivity {
 
     }
     private void  inintFruits(){
-                Shezhitu zhanhaoguali=new Shezhitu("账号管理",R.drawable.zhanhaoguanli);
+                Shezhitu zhanhaoguali=new Shezhitu("按键震动",R.drawable.zhendong);
                 shezhituList.add(zhanhaoguali);
-                Shezhitu shezhitu=new Shezhitu("关于",R.drawable.guanyu);
+                Shezhitu tuisongtongzhi=new Shezhitu("推送通知",R.drawable.tuisong);
+                shezhituList.add(tuisongtongzhi);
+                Shezhitu jiancexinbanben=new Shezhitu("检测新版本",R.drawable.jiance);
+                shezhituList.add(jiancexinbanben);
+                Shezhitu shezhitu=new Shezhitu("关于",R.drawable.about);
                 shezhituList.add(shezhitu);
 
 
