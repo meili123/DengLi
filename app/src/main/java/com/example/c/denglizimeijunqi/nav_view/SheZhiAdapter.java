@@ -1,5 +1,4 @@
 package com.example.c.denglizimeijunqi.nav_view;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,9 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.c.denglizimeijunqi.R;
-
 import java.util.List;
 
 /**
@@ -62,10 +59,6 @@ public class SheZhiAdapter extends ArrayAdapter<Shezhitu> {
         viewHolder.sehzhituName.setText(shezhitu.getName());
         /**
          * 废弃方法
-         * ImageView shezhituImage=(ImageView)view.findViewById(R.id.shezhi_imageview);
-         *  TextView sehzhituName=(TextView)view.findViewById(R.id.shezhi_textView);
-         *   shezhituImage.setImageResource(shezhitu.getImageId());
-         *   sehzhituName.setText(shezhitu.getName());
          *
          */
         return  view;

@@ -8,9 +8,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-
 import com.example.c.denglizimeijunqi.R;
-
 /**
  * Created by C on 2017/10/8.
 // */
@@ -24,7 +22,6 @@ public class BaseActivity extends AppCompatActivity {
 //        添加此活动窗口
         ActivityCollector.addActivity(this);
     }
-
 //接收消息
     @Override
     protected void onResume(){
@@ -51,7 +48,6 @@ public class BaseActivity extends AppCompatActivity {
         ActivityCollector.removeActivity(this);
     }
 }
-
 class ForceOfflineReceiver extends BroadcastReceiver{
 
     @Override
@@ -72,6 +68,5 @@ class ForceOfflineReceiver extends BroadcastReceiver{
         });
         builder.setNegativeButton("取消",null);
         builder.show();
-
     }
 }

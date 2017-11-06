@@ -28,12 +28,12 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center"/>
         <Button
-            android:id="@+id/guanli_button"
             android:layout_width="100dp"
             android:layout_height="?attr/actionBarSize"
             android:drawableLeft="@drawable/back"
             android:textSize="24sp"
-            android:background="#4052B5"/>
+            android:background="#4052B5"
+            android:id="@+id/guanli_button"/>
     </android.support.v7.widget.Toolbar>
     <Button
         android:layout_below="@+id/toolbar"

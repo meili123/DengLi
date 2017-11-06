@@ -81,6 +81,7 @@
         android:id="@+id/quxiaocan_btn"
         android:textSize="20dp"
         android:background="#f71818"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:onClick="xiaohui"/>
 
 </LinearLayout>

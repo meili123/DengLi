@@ -8,16 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.c.denglizimeijunqi.MainActivity;
 import com.example.c.denglizimeijunqi.R;
 import com.example.c.denglizimeijunqi.shujuku.UserData;
-
 import org.litepal.crud.DataSupport;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class XiuGaiMiMaActivity extends AppCompatActivity {
     private EditText userName, oldPassword,newPassword,newNewPasword;
     private List<UserData> list=new ArrayList<>();
@@ -29,16 +24,18 @@ public class XiuGaiMiMaActivity extends AppCompatActivity {
         xiugaimima.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(XiuGaiMiMaActivity.this,LoginActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(XiuGaiMiMaActivity.this, LoginActivity.class));
+                finish();
             }
         });
         Button quxiao=(Button)findViewById(R.id.quxiaocan_btn);
         quxiao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(XiuGaiMiMaActivity.this,LoginActivity.class);
-                startActivity(intent);
+            startActivity(new Intent(XiuGaiMiMaActivity.this, LoginActivity.class));
+            finish();
+
+
             }
         });
         userName=(EditText)findViewById(R.id.ueser_text);

@@ -29,12 +29,14 @@
             android:layout_gravity="center"/>
     </android.support.v7.widget.Toolbar>
 
+   <de.hdodenhof.circleimageview.CircleImageView
+       android:layout_marginTop="50dp"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:id="@+id/denglu_image"
+       android:src="@drawable/zuimei"
+       android:layout_gravity="center"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/logo"
-        android:background="@drawable/zuimei"/>
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,6 +79,7 @@
     </RelativeLayout>
 
     <Button
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Button1"
@@ -95,9 +98,31 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-    
-    
-    
-    
-    
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/qq"
+            android:background="@drawable/qqdenglu"
+            android:onClick="qqDengLu"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="150dp"
+            android:gravity="center"
+            android:id="@+id/weibo"
+            android:background="@drawable/xinlang"
+            android:onClick="weiBoDengLu"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

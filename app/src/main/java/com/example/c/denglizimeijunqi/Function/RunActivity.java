@@ -5,10 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import com.example.c.denglizimeijunqi.MainActivity;
 import com.example.c.denglizimeijunqi.R;
-
 public class RunActivity extends AppCompatActivity {
 
     @Override
@@ -20,8 +18,8 @@ public class RunActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(RunActivity.this,MainActivity.class);
-                startActivity(intent);
+               startActivity(new Intent(RunActivity.this,MainActivity.class));
+                finish();
             }
         });
     }

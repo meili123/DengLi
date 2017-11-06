@@ -1,5 +1,4 @@
 package com.example.c.denglizimeijunqi.denglu;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,13 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.c.denglizimeijunqi.R;
 import com.example.c.denglizimeijunqi.shujuku.UserData;
-
-import org.litepal.crud.DataSupport;
 import org.litepal.tablemanager.Connector;
-
 public class ZhuCeActivity extends AppCompatActivity {
     private EditText account,password,twoPassWord;
     private Button save;
@@ -59,16 +54,16 @@ public class ZhuCeActivity extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ZhuCeActivity.this, LoginActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(ZhuCeActivity.this, LoginActivity.class));
+                finish();
             }
         });
         Button quxioa=(Button)findViewById(R.id.zhuce_button);
         quxioa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ZhuCeActivity.this, LoginActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(ZhuCeActivity.this, LoginActivity.class));
+                finish();
 
             }
         });

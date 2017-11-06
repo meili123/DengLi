@@ -7,12 +7,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.example.c.denglizimeijunqi.MainActivity;
 import com.example.c.denglizimeijunqi.R;
 import com.example.c.denglizimeijunqi.SheZhi.GuanYuActivity;
 import com.example.c.denglizimeijunqi.denglu.BaseActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +31,9 @@ public class SheZhiActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Shezhitu shezhitu=shezhituList.get(i);
                  if (shezhitu.getName().equals("关于")){
-                    Intent intent=new Intent(SheZhiActivity.this, GuanYuActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(SheZhiActivity.this, GuanYuActivity.class));
+                     finish();
+
                 }else if(shezhitu.getName().equals("检测新版本")){
                      Toast.makeText(SheZhiActivity.this,"已经是最新版本",Toast.LENGTH_LONG).show();
                  }
@@ -45,8 +44,8 @@ public class SheZhiActivity extends BaseActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SheZhiActivity.this,MainActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(SheZhiActivity.this,MainActivity.class));
+                finish();
             }
         });
         Button button1=(Button)findViewById(R.id.tuichu_Button);

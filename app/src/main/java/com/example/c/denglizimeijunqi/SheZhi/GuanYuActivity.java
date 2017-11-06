@@ -22,8 +22,9 @@ public class GuanYuActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(GuanYuActivity.this,SheZhiActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(GuanYuActivity.this,SheZhiActivity.class));
+                finish();
+
             }
         });
         TextView button1=(TextView)findViewById(R.id.buttonURL);

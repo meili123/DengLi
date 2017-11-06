@@ -7,12 +7,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import com.example.c.denglizimeijunqi.MainActivity;
 import com.example.c.denglizimeijunqi.R;
 import com.sevenheaven.segmentcontrol.SegmentControl;
-
 public class BangZhuActivity extends AppCompatActivity {
     private String[] data={"1. 使用准备\n" +
             "  1) 产品始终预热并保持住开关始终为ON的状态\n" +
@@ -129,8 +126,8 @@ public class BangZhuActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(BangZhuActivity.this,MainActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(BangZhuActivity.this,MainActivity.class));
+                finish();
             }
         });
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(BangZhuActivity.this,android.R.layout.simple_list_item_1,data);

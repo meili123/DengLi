@@ -13,10 +13,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,13 +23,9 @@ import android.widget.Toast;
 import com.example.c.denglizimeijunqi.nav_view.SheZhiActivity;
 import com.example.c.denglizimeijunqi.nav_view.TianJiaSheBeiActivity;
 import com.example.c.denglizimeijunqi.shujuku.UserData;
-
-import org.litepal.crud.DataSupport;
-
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.prefs.PreferenceChangeEvent;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -55,15 +48,12 @@ public class MainActivity extends AppCompatActivity {
         /**
          * 左侧的navview
          */
-
         NavigationView navigationView=(NavigationView)findViewById(R.id.nav_view);
         View headview=navigationView.inflateHeaderView(R.layout.nav_header);
         ImageView head_iv= (ImageView) headview.findViewById(R.id.xiaogou);
         TextView textView=(TextView)headview.findViewById(R.id.mailtext);
         Intent intent=getIntent();
         String data=intent.getStringExtra("yonghuming");
-        String mima=intent.getStringExtra("mima");
-
         pref= PreferenceManager.getDefaultSharedPreferences(this);
         boolean isRemember=pref.getBoolean("remember_name",false);
         if (isRemember){
@@ -79,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         head_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,TuiChuZhangHaoActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this,TuiChuZhangHaoActivity.class));
+                finish();
             }
         });
 
@@ -89,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.shezhi:
-                        Intent intent=new Intent(MainActivity.this, SheZhiActivity.class);
-                        startActivity(intent);
+                        startActivity(new Intent(MainActivity.this, SheZhiActivity.class));
+                        finish();
                         break;
                     case R.id.tianjiashebei:
-                        Intent intent1=new Intent(MainActivity.this, TianJiaSheBeiActivity.class);
-                        startActivity(intent1);
+                        startActivity(new Intent(MainActivity.this, TianJiaSheBeiActivity.class));
+                        finish();
                         break;
                     default:
                 }
@@ -129,15 +119,6 @@ public class MainActivity extends AppCompatActivity {
         adapter=new FunctionAdapter(functionalist);
         recyclerView.setAdapter(adapter);
 
-
-
-//      NavigationView navigatin = (NavigationView)findViewById(R.id.nav_view);
-//      View  headerLayout = navigatin.inflateHeaderView(R.layout.nav_header);
-//        TextView textView=(TextView)headerLayout.findViewById(R.id.mailtext);
-
-//        View mView= getLayoutInflater().inflate(R.layout.nav_header,null);
-//        TextView textView=(TextView)mView.findViewById(R.id.mailtext);
-//        textView.setText("4654984");
     }
 
     /**
@@ -148,40 +129,19 @@ public class MainActivity extends AppCompatActivity {
 //       getMenuInflater().inflate(R.menu.toolbar,menu);
 //        return true;
 //    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        setIconEnable(menu,true);
-        getMenuInflater().inflate(R.menu.toolbar, menu);
-        return true;
-    }
-    private void setIconEnable(Menu menu, boolean enable)
-    {
-        try
-        {
-            Class<?> clazz = Class.forName("com.android.internal.view.menu.MenuBuilder");
-            Method m = clazz.getDeclaredMethod("setOptionalIconsVisible", boolean.class);
-            m.setAccessible(true);
-            //下面传入参数
-            m.invoke(menu, enable);
-
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
     /**
      * 实现菜单点击事件
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
-            case R.id.add_item:
-                Toast.makeText(this,"你点击了添加按钮",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.remove_item:
-                Toast.makeText(this,"你点击了删除按钮",Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.add_item:
+//                Toast.makeText(this,"你点击了添加按钮",Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.remove_item:
+//                Toast.makeText(this,"你点击了删除按钮",Toast.LENGTH_SHORT).show();
+//                break;
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;

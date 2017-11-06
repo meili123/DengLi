@@ -15,7 +15,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:id="@+id/xiaogou"
-            android:src="@drawable/xiaogou"
+            android:src="@drawable/zuimei"
             android:layout_centerInParent="true"/>
     <TextView
         android:layout_width="wrap_content"

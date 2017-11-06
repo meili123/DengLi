@@ -12,8 +12,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.c.denglizimeijunqi.Function.BangZhuActivity;
 import com.example.c.denglizimeijunqi.Function.BaoZhuangActivity;
-import com.example.c.denglizimeijunqi.Function.FaXianActivity;
+import com.example.c.denglizimeijunqi.FaXian.FaXianActivity;
 import com.example.c.denglizimeijunqi.Function.RunActivity;
+import com.example.c.denglizimeijunqi.denglu.LoginActivity;
 
 import java.util.List;
 
@@ -58,7 +59,6 @@ public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.ViewHo
      *   创造ViewHolder实例
      */
 
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (mcontext==null){
@@ -71,7 +71,6 @@ public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.ViewHo
         /**
          *把加载的布局viewc传入holder
          */
-
         final ViewHolder holder=new ViewHolder(view);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,23 +86,30 @@ public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.ViewHo
                 if(fruit.getName().equals("设备运行状态")){
                     Intent intent=new Intent(mcontext,RunActivity.class);
                     mcontext.startActivity(intent);
+                    MainActivity activity = (MainActivity)mcontext;
+                    activity.finish();
                 }else if (fruit.getName().equals("帮助")){
                     Intent intent=new Intent(mcontext,BangZhuActivity.class);
                     mcontext.startActivity(intent);
+                    MainActivity activity = (MainActivity)mcontext;
+                    activity.finish();
 
                 }else if (fruit.getName().equals("发现")){
                     Intent intent=new Intent(mcontext,FaXianActivity.class);
                     mcontext.startActivity(intent);
-
+                    MainActivity activity = (MainActivity)mcontext;
+                    activity.finish();
                 }else if(fruit.getName().equals("包装")){
                     Intent intent=new Intent(mcontext,BaoZhuangActivity.class);
                     mcontext.startActivity(intent);
+                    MainActivity activity = (MainActivity)mcontext;
+                    activity.finish();
                 }
 
             }
+
         });
         return holder;
-
     }
     /**
      * 对ViewHjolder进行赋值，滚动时候执行

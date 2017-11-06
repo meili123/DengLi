@@ -19,15 +19,6 @@ public class UserDataMangerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_data_manger);
-        Button createDatabase = (Button) findViewById(R.id.create_list_buttton);
-//        createDatabase.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Connector.getDatabase();
-//            }
-//        });
-//        添加数据
-
         Button addData = (Button) findViewById(R.id.Add_data_buttton);
         addData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,29 +74,6 @@ public class UserDataMangerActivity extends AppCompatActivity {
                 }
             }
         });
-
-//查询方法
-//        查询Book表中第一条数据：
-//        Book firstBook = DataSupport.findFirst(Book.class);
-//        最后一条：
-//        Book lastBook = DataSupport.findLast(Book.class);
-//        通过连缀查询定制更多功能：
-//        select(）方法指定查询那几列数据，如：
-//                List books = DataSupport.select(“name”, “author”).find(Book.class);
-//        where()指定查询约束条件，如：
-//        List books = DataSupport.where(“pages > ?”, “400”).find(Book.class);
-//        order()指定结果的排序方式(默认asc升序)，如：
-//        List books = DataSupport.order(“price desc”).find(Book.class);
-//        limit()指定查询结果数量(行)：
-//        List books = DataSupport.limit(3).find(Book.class);
-//        offset()指定查询结果偏移量，如查询第2、3、4条数据：
-//        List books = DataSupport.limit(3).offset(1).find(Book.class);
-//        还可以对着5个方法进行任意连缀组合，形成复杂查询操作：
-//        List books = DataSupport.select(“name”, “author”, “pages”).where(“pages > ?”, “400”).order(“pages”).limit(10).offset(10).find(Book.class);
-//
-//        LitePal仍然支持使用原生的SQL进行查询：
-//        Cursor c = DataSupport.findBySQL(“select * from Book where pages > ? and price < ?”, “400”, “20”);
-//        findBySQL返回的是cursor对象，需将数据一一取出。
 
     }
 }
